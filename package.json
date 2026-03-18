@@ -13,6 +13,9 @@
     "dev": "tsup --watch",
     "prepublishOnly": "npm run build"
   },
+  "workspaces": [
+    "example"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
