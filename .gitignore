@@ -1,0 +1,6 @@
+/node_modules
+/.next
+/genrate-icons-file.js
+dist
+.env
+/public/assets/i18n/translations
