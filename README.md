@@ -12,8 +12,7 @@ npm install use-optimistic-updates
 
 Peer dependencies:
 
-- `react >= 18`
-- `react-dom >= 18`
+- `react >= 16.8`
 
 ## Usage
 
