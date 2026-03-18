@@ -1,4 +1,3 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
@@ -6,7 +5,10 @@ import "./App.css";
 import useOptimisticUpdatesLayer from "use-optimistic-updates";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { applyUpdate, getOptimisticState } =
+    useOptimisticUpdatesLayer<{ count: number }>();
+  const countEntity = getOptimisticState("counter");
+  const count = countEntity.count ?? 0;
 
   return (
     <>
@@ -24,7 +26,12 @@ function App() {
         </div>
         <button
           className="counter"
-          onClick={() => setCount((count) => count + 1)}
+          onClick={() =>
+            applyUpdate({
+              id: "counter",
+              count: count + 1,
+            })
+          }
         >
           Count is {count}
         </button>
